@@ -1,0 +1,94 @@
+@font-face {
+    font-family: Masiku;
+    src: url(Masiku.ttf);
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100%;
+    background: url('./images/bg.jpg'),no-repeat,center;
+    background-size: cover;
+    overflow: hidden;
+    font-family: Masiku;
+}
+h2{
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #e6e6e6;
+    margin-top: 5rem;
+    margin-bottom: 9rem;
+}
+.clock{
+    display: flex;
+    position: relative;
+}
+.clock div{
+    margin: 5px;
+}
+.clock span{
+    width: 100px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cccccc;
+    background:#333333 ;
+    font-size: 50px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    letter-spacing: 3px;
+}
+.clock .text{
+    height: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    background: #191919;
+    margin-top: 5px;
+}
+.clock #ampms{
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+@media (max-width:560px) {
+    body{
+        justify-content: center;
+    }
+    .clock{
+        flex-direction: column;
+    }
+    h2{
+        letter-spacing: 3px;
+        margin-top: 0rem;
+        margin-bottom: 2rem;
+    }
+    .clock #ampms{
+        /* bottom: -28; */
+        margin-bottom: -23px;
+        transition: all 0.3s ease-in-out;
+        animation: blink 2s infinite;
+    }
+    @keyframes blink {
+        0%{
+            background: #666666;
+        }
+        50%{
+            background: #4d4d4d;
+        }
+        100%{
+            background:#666666;
+        }
+    }
+}
